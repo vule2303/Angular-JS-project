@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" modified="2023-06-07T07:32:46.494Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="CChxrv7Day2rmMee2RSS" version="21.3.7" type="github">
+  <diagram name="Trang-1" id="cnOSumTbthVu8hze1_SV">
+    <mxGraphModel dx="1210" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IhOkM0QZsy-EgQr038lC-6" value="User" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-8" value="Tên" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-9" value="Email" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-10" value="SDT" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="309" y="10" width="106" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-11" value="Mật khẩu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="100" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-12" value="Mật khẩu" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="85" width="104" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-13" value="Ngày sinh" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="170" width="104" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="IhOkM0QZsy-EgQr038lC-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.981;exitY=0.407;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="IhOkM0QZsy-EgQr038lC-13" target="IhOkM0QZsy-EgQr038lC-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="110" y="180" as="sourcePoint" />
+            <mxPoint x="150" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
