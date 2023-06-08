@@ -1,0 +1,149 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">User</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="User name"
+                        id="Username"
+                        ng-model="dl_edit.Username"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Email</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Email"
+                        id="Email"
+                        ng-model="dl_edit.Email"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Passwork</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Passwork"
+                        id="Passwork"
+                        ng-model="dl_edit.Passwork"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Sex</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Male or Female"
+                        id="Sex"
+                        ng-model="dl_edit.Sex"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Phone</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Number"
+                        id="Phone"
+                        ng-model="dl_edit.Phone"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Birthday</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Day"
+                        id="Birthday"
+                        ng-model="dl_edit.Birthday"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="dl_edit.id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-show="!showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button type="reset" class="btn btn-round btn-danger">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">User</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Passwork</th>
+                    <th>Sex</th>
+                    <th>Phone</th>
+                    <th>Birthday</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="User in getAllUser">
+                    <td>{{User.id}}</td>
+                    <td>{{User.Username}}</td>
+                    <td>{{User.Email}}</td>
+                    <td>{{User.Passwork}}</td>
+                    <td>{{User.Sex}}</td>
+                    <td>{{User.Phone}}</td>
+                    <td>{{User.Birthday}}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="editUser(User)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(User)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->
