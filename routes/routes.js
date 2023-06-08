@@ -54,8 +54,8 @@ app.controller("HomeCtrl", function ($scope, $http) {
     //GET RANDOM MOVIE
     $http({
         method: "GET",
-        url: 'https://vule2303.alwaysdata.net/Back-end/index.php/welcome/getRandomMovie'
-    }).then(function(res){
+        url: "https://vule2303.alwaysdata.net/Back-end/index.php/welcome/getRandomMovie",
+    }).then(function (res) {
         $scope.ListMovie = res.data;
     });
 
