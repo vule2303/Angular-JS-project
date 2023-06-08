@@ -4,4 +4,5 @@ app.config(function ($routeProvider) {
     $routeProvider.when("/", {
         templateUrl: "component/User/DataUser.html",
     });
+    
 });
