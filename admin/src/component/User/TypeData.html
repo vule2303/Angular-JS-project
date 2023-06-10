@@ -1,0 +1,187 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content" ng-controller="TypeCtr">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">Type_Account</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Type"
+                        id="type"
+                        ng-model="type_account"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Type"
+                        id="type"
+                        ng-model="dl_edit.type_account"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Price</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Price"
+                        id="price"
+                        ng-model="price"
+                        ng-show="showButton"
+                    />
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="price"
+                    id="price"
+                    ng-model="dl_edit.price"
+                    ng-hide="showButton"
+                />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Device</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Device"
+                        id="device"
+                        ng-model="device"
+                        ng-show="showButton"
+
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Device"
+                        id="device"
+                        ng-model="dl_edit.device"
+                        ng-hide="showButton"
+
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Quality</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Quality"
+                        id="quality"
+                        ng-model="quality"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Quality"
+                        id="quality"
+                        ng-model="dl_edit.quality"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col">
+                    <label for="">EXP</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="EXP"
+                        id="exp"
+                        ng-model="exp"
+                        ng-show="showButton"
+
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="EXP"
+                        id="exp"
+                        ng-model="dl_edit.exp"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                    ng-click="Create()"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-hide="showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button type="reset" class="btn btn-round btn-danger" ng-click="Cancle()">
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">User</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Type_Account</th>
+                    <th>Price</th>
+                    <th>Device</th>
+                    <th>Quality</th>
+                    <th>EXP</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Type in GetAll">
+                    <td>{{Type.id}}</td>
+                    <td>{{Type.type_account	}}</td>
+                    <td>{{Type.	price}}</td>
+                    <td>{{Type.device}}</td>
+                    <td>{{Type.quality}}</td>
+                    <td>{{Type.exp}}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="Edit(Type)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(Type)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->

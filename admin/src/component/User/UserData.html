@@ -11,7 +11,16 @@
                         class="form-control"
                         placeholder="User name"
                         id="username"
-                        ng-model="dl_edit.Username"
+                        ng-model="username"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="User name"
+                        id="username"
+                        ng-model="dl_edit.username"
+                        ng-hide="showButton"
                     />
                 </div>
                 <div class="col">
@@ -20,9 +29,18 @@
                         type="text"
                         class="form-control"
                         placeholder="Email"
-                        id="Email"
-                        ng-model="dl_edit.Email"
+                        id="email"
+                        ng-model="email"
+                        ng-show="showButton"
                     />
+                    <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Email"
+                    id="email"
+                    ng-model="dl_edit.email"
+                    ng-hide="showButton"
+                />
                 </div>
             </div>
             <div class="row">
@@ -33,45 +51,66 @@
                         class="form-control"
                         placeholder="Password"
                         id="password"
-                        ng-model="dl_edit.password"
+                        ng-model="password"
+                        ng-show="showButton"
+
                     />
-                </div>
-                <div class="col">
-                    <label for="">Sex</label>
                     <input
                         type="text"
                         class="form-control"
-                        placeholder="Male or Female"
-                        id="Sex"
-                        ng-model="dl_edit.Sex"
+                        placeholder="Password"
+                        id="password"
+                        ng-model="dl_edit.password"
+                        ng-hide="showButton"
+
                     />
                 </div>
-            </div>
-            <div class="row">
                 <div class="col">
                     <label for="">Phone</label>
                     <input
                         type="text"
                         class="form-control"
                         placeholder="Number"
-                        id="Phone"
-                        ng-model="dl_edit.Phone"
+                        id="phone"
+                        ng-model="phone"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Number"
+                        id="phone"
+                        ng-model="dl_edit.phone"
+                        ng-hide="showButton"
                     />
                 </div>
+            </div>
+            <div class="row">
+                
                 <div class="col">
                     <label for="">Birthday</label>
+                    <input
+                        type="date"
+                        class="form-control"
+                        placeholder="Day"
+                        id="birthday"
+                        ng-model="birthday"
+                        ng-show="showButton"
+
+                    />
                     <input
                         type="text"
                         class="form-control"
                         placeholder="Day"
-                        id="Birthday"
-                        ng-model="dl_edit.Birthday"
+                        id="birthday"
+                        ng-model="dl_edit.birthday"
+                        ng-hide="showButton"
                     />
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <label ng-model="dl_edit.id"></label>
+                    <label ng-model="id"></label>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
@@ -79,6 +118,7 @@
                     type="submit"
                     class="btn btn-round btn-primary waves-effect"
                     style="margin: 0 10px"
+                    ng-show="showButton"
                     ng-click="Create()"
                 >
                     Create
@@ -87,12 +127,12 @@
                     type="update"
                     class="btn btn-round btn-info"
                     ng-click="Update(dl_edit)"
-                    ng-show="!showButton"
+                    ng-hide="showButton"
                     style="margin: 0 10px"
                 >
                     Update
                 </button>
-                <button type="reset" class="btn btn-round btn-danger">
+                <button type="reset" class="btn btn-round btn-danger" ng-click="Cancle()">
                     Cancel
                 </button>
             </div>
@@ -107,7 +147,7 @@
                     <th>Id</th>
                     <th>Username</th>
                     <th>Email</th>
-                    <th>Passwork</th>
+                    <th>Password</th>
                     <th>Phone</th>
                     <th>Birthday</th>
                     <th></th>
@@ -118,14 +158,14 @@
                     <td>{{User.id}}</td>
                     <td>{{User.username}}</td>
                     <td>{{User.email}}</td>
-                    <td>{{User.passwork}}</td>
+                    <td>{{User.password}}</td>
                     <td>{{User.phone}}</td>
                     <td>{{User.birthday}}</td>
                     <td>
                         <button
                             type="button"
                             class="btn btn-round btn-info"
-                            ng-click="editUser(User)"
+                            ng-click="Edit(User)"
                         >
                             Update
                         </button>

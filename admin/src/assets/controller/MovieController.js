@@ -1,32 +1,31 @@
-app.controller("UserCtr", function ($scope, $http) {
+app.controller("MovieCrt", function ($scope, $http) {
     //GET ALL
+
     $http({
         method: "GET",
-        url: "https://vule2303.alwaysdata.net/Back-end/index.php/UserController/GetAllUser",
+        url: "https://vule2303.alwaysdata.net/Back-end/index.php/MovieController/GetAll",
     }).then(function GetAll(response) {
-        $scope.GetAllUser = response.data;
+        $scope.GetAll = response.data;
     });
 
     //===============================CREATE==================================
 
     $scope.Create = function () {
-        var dateObject = new Date($scope.birthday);
-        var day = dateObject.getDate();
-        var month = dateObject.getMonth() + 1;
-        var year = dateObject.getFullYear();
-
-        var formattedBirthday = day + "-" + month + "-" + year;
-
         var data = $.param({
-            username: $scope.username,
-            email: $scope.email,
-            password: $scope.password,
-            phone: $scope.phone,
-            birthday: formattedBirthday,
+            title: $scope.title,
+            overview: $scope.overview,
+            release: $scope.release,
+            country: $scope.country,
+            trailer: $scope.trailer,
+            runtime: $scope.runtime,
+            vote_average: $scope.vote_average,
+            quality: $scope.quality,
+            age: $scope.age,
+            poster_path: $scope.poster_path,
         });
         console.log(data);
         var url =
-            "https://vule2303.alwaysdata.net/Back-end/index.php/UserController/CreateUser";
+            "https://vule2303.alwaysdata.net/Back-end/index.php/MovieController/Create";
         var config = {
             headers: {
                 "content-type":
@@ -49,7 +48,7 @@ app.controller("UserCtr", function ($scope, $http) {
         $http({
             method: "DELETE",
             url:
-                "https://vule2303.alwaysdata.net/Back-end/index.php/UserController/DeleteUser/" +
+                "https://vule2303.alwaysdata.net/Back-end/index.php/MovieController/Delete/" +
                 user.id,
         }).then(
             function success() {
@@ -74,18 +73,24 @@ app.controller("UserCtr", function ($scope, $http) {
     $scope.Cancle = function (user) {
         $scope.showButton = true;
     };
+
     $scope.Update = function (user) {
         var data = $.param({
             id: user.id,
-            username: user.username,
-            email: user.email,
-            password: user.password,
-            phone: user.phone,
-            birthday: user.birthday,
+            title: user.title,
+            overview: user.overview,
+            release: user.release,
+            country: user.country,
+            trailer: user.trailer,
+            runtime: user.runtime,
+            vote_average: user.vote_average,
+            quality: user.quality,
+            age: user.age,
+            poster_path: user.poster_path,
         });
         console.log(data);
         var url =
-            "https://vule2303.alwaysdata.net/Back-end/index.php/UserController/UpdateUser";
+            "https://vule2303.alwaysdata.net/Back-end/index.php/MovieController/Update";
         var config = {
             headers: {
                 "content-type":

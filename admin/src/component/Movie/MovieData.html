@@ -1,0 +1,296 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content" ng-controller="MovieCrt">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">Title</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Title"
+                        id="username"
+                        ng-model="title"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Title"
+                        id="username"
+                        ng-model="dl_edit.title"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Overview</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Overview"
+                        id="email"
+                        ng-model="overview"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Overview"
+                        id="email"
+                        ng-model="dl_edit.overview"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Release</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Release"
+                        id="password"
+                        ng-model="release"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Release"
+                        id="password"
+                        ng-model="dl_edit.release"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Country</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Country"
+                        id="phone"
+                        ng-model="country"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Country"
+                        id="phone"
+                        ng-model="dl_edit.country"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Trailer</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Trailer"
+                        id="birthday"
+                        ng-model="trailer"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Trailer"
+                        id="birthday"
+                        ng-model="dl_edit.trailer"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Runtime</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Runtime"
+                        id="birthday"
+                        ng-model="runtime"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Runtime"
+                        id="birthday"
+                        ng-model="dl_edit.runtime"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Vote_Average</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Vote_Average"
+                        id="birthday"
+                        ng-model="vote_average"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Vote_Average"
+                        id="birthday"
+                        ng-model="dl_edit.vote_average"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Quality</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Quality"
+                        id="birthday"
+                        ng-model="quality"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Quality"
+                        id="birthday"
+                        ng-model="dl_edit.quality"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">Age</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Age"
+                        id="birthday"
+                        ng-model="age"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Age"
+                        id="birthday"
+                        ng-model="dl_edit.age"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Poster_path</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Poster_path"
+                        id="birthday"
+                        ng-model="poster_path"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Poster_path"
+                        id="birthday"
+                        ng-model="dl_edit.poster_path"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                    ng-click="Create()"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-hide="showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button
+                    type="reset"
+                    class="btn btn-round btn-danger"
+                    ng-click="Cancle()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">User</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Overview</th>
+                    <th>Release</th>
+                    <th>Country</th>
+                    <th>Trailer</th>
+                    <th>RunTime</th>
+                    <th>Vote_Average</th>
+                    <th>Quality</th>
+                    <th>Age</th>
+                    <th>Poster_path</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Movie in GetAll">
+                    <td>{{Movie.id}}</td>
+                    <td>{{Movie.title}}</td>
+                    <td class="line-clamp break-all">{{Movie.overview}}</td>
+                    <td>{{Movie.release}}</td>
+                    <td>{{Movie.country}}</td>
+                    <td>{{Movie.trailer}}</td>
+                    <td>{{Movie.runtime}}</td>
+                    <td>{{Movie.vote_average}}</td>
+                    <td>{{Movie.quality}}</td>
+                    <td>{{Movie.age}}</td>
+                    <td>{{Movie.poster_path}}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="Edit(Movie)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(Movie)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->
