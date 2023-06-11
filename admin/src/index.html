@@ -51,33 +51,33 @@
 
     <body>
         <div class="layout-content">
-        <!-- [ Preloader ] Start -->
-        <div class="page-loader">
-            <div class="bg-primary"></div>
-        </div>
-        <!-- [ Preloader ] Ebd -->
-
-        <!-- [ Layout wrapper ] Start -->
-        <div class="layout-wrapper layout-2">
-            <div class="layout-inner">
-                <!-- [ Layout sidenav ] Start -->
-                <div ng-include="'component/shared/nav_left.html'"></div>
-                <!-- [ Layout sidenav ] End -->
-                <!-- [ Layout container ] Start -->
-                <div class="layout-container">
-                    <!-- [ Layout navbar ( Header ) ] Start -->
-                    <div ng-include="'component/shared/nav_top.html'"></div>
-                    <!-- [ Layout navbar ( Header ) ] End -->
-                    <ng-view></ng-view>
-                </div>
-                <!-- [ Layout container ] End -->
+            <!-- [ Preloader ] Start -->
+            <div class="page-loader">
+                <div class="bg-primary"></div>
             </div>
+            <!-- [ Preloader ] Ebd -->
 
-            <!-- Overlay -->
-            <div class="layout-overlay layout-sidenav-toggle"></div>
+            <!-- [ Layout wrapper ] Start -->
+            <div class="layout-wrapper layout-2">
+                <div class="layout-inner">
+                    <!-- [ Layout sidenav ] Start -->
+                    <div ng-include="'component/shared/nav_left.html'"></div>
+                    <!-- [ Layout sidenav ] End -->
+                    <!-- [ Layout container ] Start -->
+                    <div class="layout-container">
+                        <!-- [ Layout navbar ( Header ) ] Start -->
+                        <div ng-include="'component/shared/nav_top.html'"></div>
+                        <!-- [ Layout navbar ( Header ) ] End -->
+                        <ng-view></ng-view>
+                    </div>
+                    <!-- [ Layout container ] End -->
+                </div>
+
+                <!-- Overlay -->
+                <div class="layout-overlay layout-sidenav-toggle"></div>
+            </div>
+            <!-- [ Layout wrapper ] end -->
         </div>
-        <!-- [ Layout wrapper ] end -->
-    </div>
         <!-- Core scripts -->
         <script src="assets/js/pace.js"></script>
         <script src="assets/js/jquery-3.3.1.min.js"></script>
@@ -109,5 +109,8 @@
         <script src="./assets/controller/Usercontroller.js"></script>
         <script src="./assets/controller/MovieController.js"></script>
         <script src="./assets/controller/TypeController.js"></script>
+        <script src="./assets/controller/UserTypeController.js"></script>
+        <script src="./assets/controller/GenreController.js"></script>
+        <script src="./assets/controller/MovieGenreController.js"></script>
     </body>
 </html>

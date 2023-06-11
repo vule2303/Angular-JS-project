@@ -8,8 +8,20 @@ app.config(function ($routeProvider) {
         .when("/type", {
             templateUrl: "component/User/TypeData.html",
         })
+        .when("/type-account", {
+            templateUrl: "component/User/User_Type.html",
+        })
         .when("/movie", {
             templateUrl: "component/Movie/MovieData.html",
+        })
+        .when("/genre", {
+            templateUrl: "component/Movie/GenreData.html",
+        })
+        .when("/moviegenre", {
+            templateUrl: "component/Movie/MovieGenre.html",
+        })
+        .when("/login", {
+            templateUrl: "login.html",
         })
         .otherwise({
             redirectTo: "/user",

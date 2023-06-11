@@ -1,0 +1,121 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content" ng-controller="MovieGenreCtr">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">Movie ID</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Movie ID"
+                        id="movieid"
+                        ng-model="movieid"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Movie ID"
+                        id="movieid"
+                        ng-model="dl_edit.movieid"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">Genre ID</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Genre ID"
+                        id="genreid"
+                        ng-model="genreid"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Genre ID"
+                        id="genreid"
+                        ng-model="dl_edit.genreid"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                    ng-click="Create()"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-hide="showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button
+                    type="reset"
+                    class="btn btn-round btn-danger"
+                    ng-click="Cancle()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">User</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Movie ID</th>
+                    <th>Genre ID</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in GetAll">
+                    <td>{{item.id}}</td>
+                    <td>{{item.movieId}}</td>
+                    <td>{{item.genreId}}</td>
+
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="Edit(item)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(item)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->

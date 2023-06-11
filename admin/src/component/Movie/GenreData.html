@@ -1,0 +1,99 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content" ng-controller="GenreCtr">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">Name</label>
+                    <input
+                        type="id"
+                        class="form-control"
+                        placeholder="Name Genre"
+                        id="name"
+                        ng-model="name"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Name Genre"
+                        id="name"
+                        ng-model="dl_edit.name"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                    ng-click="Create()"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-hide="showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button
+                    type="reset"
+                    class="btn btn-round btn-danger"
+                    ng-click="Cancle()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">Genre</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Type in GetAll">
+                    <td>{{Type.id}}</td>
+                    <td>{{Type.name}}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="Edit(Type)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(Type)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->

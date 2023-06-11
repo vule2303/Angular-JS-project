@@ -1,0 +1,164 @@
+<!-- [ Layout content ] Start -->
+<div class="layout-content" ng-controller="UserTypeCtr">
+    <div class="container-fluid container-p-y">
+        <h2>Form</h2>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label for="">idType</label>
+                    <input
+                        type="id"
+                        class="form-control"
+                        placeholder="idType"
+                        id="idType"
+                        ng-model="idType"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="idType"
+                        id="idType"
+                        ng-model="dl_edit.idType"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">idUser</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="idUser"
+                        id="idUser"
+                        ng-model="idUser"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="idUser"
+                        id="idUser"
+                        ng-model="dl_edit.idUser"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="">StartDate</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="StartDate"
+                        id="startdate"
+                        ng-model="startdate"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="StartDate"
+                        id="startdate"
+                        ng-model="dl_edit.startdate"
+                        ng-hide="showButton"
+                    />
+                </div>
+                <div class="col">
+                    <label for="">EndDate</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="EndDate"
+                        id="enddate"
+                        ng-model="enddate"
+                        ng-show="showButton"
+                    />
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="EndDate"
+                        id="enddate"
+                        ng-model="dl_edit.enddate"
+                        ng-hide="showButton"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label ng-model="id"></label>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <button
+                    type="submit"
+                    class="btn btn-round btn-primary waves-effect"
+                    style="margin: 0 10px"
+                    ng-show="showButton"
+                    ng-click="Create()"
+                >
+                    Create
+                </button>
+                <button
+                    type="update"
+                    class="btn btn-round btn-info"
+                    ng-click="Update(dl_edit)"
+                    ng-hide="showButton"
+                    style="margin: 0 10px"
+                >
+                    Update
+                </button>
+                <button
+                    type="reset"
+                    class="btn btn-round btn-danger"
+                    ng-click="Cancle()"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </div>
+    <!-- [ content ] Start -->
+    <div class="container-fluid flex-grow-1 container-p-y">
+        <h4 class="font-weight-bold py-3 mb-0">User</h4>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Id</th>
+                    <th>IdType</th>
+                    <th>IdUser</th>
+                    <th>StartDate</th>
+                    <th>EndDate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="Type in GetAll">
+                    <td>{{Type.id}}</td>
+                    <td>{{Type.idType}}</td>
+                    <td>{{Type.idUser}}</td>
+                    <td>{{Type.startdate}}</td>
+                    <td>{{Type.enddate}}</td>
+                    <td>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-info"
+                            ng-click="Edit(Type)"
+                        >
+                            Update
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-round btn-danger"
+                            ng-click="Delete(Type)"
+                        >
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="border-light container-m--x my-4" />
+    </div>
+    <!-- [ content ] End -->
+</div>
+<!-- [ Layout content ] Start -->
