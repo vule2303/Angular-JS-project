@@ -20,9 +20,6 @@ app.config(function ($routeProvider) {
         .when("/moviegenre", {
             templateUrl: "component/Movie/MovieGenre.html",
         })
-        .when("/login", {
-            templateUrl: "login.html",
-        })
         .otherwise({
             redirectTo: "/user",
         });
