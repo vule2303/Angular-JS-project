@@ -1,6 +1,9 @@
-<nav
+<nav 
     class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x"
     id="layout-navbar"
+    
+
+
 >
     <!-- Brand demo (see assets/css/demo/demo.css) -->
     <a
@@ -60,8 +63,11 @@
                         <span class="px-1 mr-lg-2 ml-2 ml-lg-0">Admin</span>
                     </span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a target="_self" href="login.html" class="dropdown-item">
+                <div
+                    class="dropdown-menu dropdown-menu-right"
+                    ng-controller="LoginCtr"
+                >
+                    <a href="#" class="dropdown-item" ng-click="logout()">
                         <i class="feather icon-power text-danger"></i>
                         &nbsp; Log Out</a
                     >

@@ -49,8 +49,9 @@
         />
     </head>
 
-    <body>
-        <div class="layout-content" id="content">
+    <body ng-controller="LoginCtr" >
+        <div ng-view ng-show="showE"></div>
+        <div class="layout-content" id="content" ng-hide="showE">
             <!-- [ Preloader ] Start -->
             <div class="page-loader">
                 <div class="bg-primary"></div>
@@ -61,14 +62,15 @@
             <div class="layout-wrapper layout-2">
                 <div class="layout-inner">
                     <!-- [ Layout sidenav ] Start -->
-                    <div ng-include="'component/shared/nav_left.html'"></div>
+                    <nav-left></nav-left>
                     <!-- [ Layout sidenav ] End -->
                     <!-- [ Layout container ] Start -->
                     <div class="layout-container">
                         <!-- [ Layout navbar ( Header ) ] Start -->
-                        <div ng-include="'component/shared/nav_top.html'"></div>
+                        <nav-top></nav-top>
                         <!-- [ Layout navbar ( Header ) ] End -->
                         <ng-view></ng-view>
+
                     </div>
                     <!-- [ Layout container ] End -->
                 </div>
@@ -76,6 +78,7 @@
                 <!-- Overlay -->
                 <div class="layout-overlay layout-sidenav-toggle"></div>
             </div>
+
             <!-- [ Layout wrapper ] end -->
         </div>
         <!-- Core scripts -->
@@ -112,5 +115,8 @@
         <script src="./assets/controller/UserTypeController.js"></script>
         <script src="./assets/controller/GenreController.js"></script>
         <script src="./assets/controller/MovieGenreController.js"></script>
+        <script src="./assets/controller/LoginController.js"></script>
+        <script src="./assets/controller/NavController.js"></script>
+        <script src="./assets/directives/drectives.js"></script>
     </body>
 </html>

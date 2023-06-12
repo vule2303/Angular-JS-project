@@ -11,8 +11,8 @@ app.controller("MovieGenreCtr", function ($scope, $http) {
 
     $scope.Create = function () {
         var data = $.param({
-            movieid: $scope.movieid,
-            genreid: $scope.genreid,
+            movieid: $scope.movieId,
+            genreid: $scope.genreId,
         });
         console.log(data);
         var url =

@@ -1,6 +1,6 @@
 var app = angular.module("AdminPage", ["ngRoute"]);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $httpProvider) {
     $routeProvider
         .when("/user", {
             templateUrl: "component/User/UserData.html",
@@ -20,7 +20,23 @@ app.config(function ($routeProvider) {
         .when("/moviegenre", {
             templateUrl: "component/Movie/MovieGenre.html",
         })
+        .when("/login", {
+            templateUrl: "login.html",
+        })
         .otherwise({
             redirectTo: "/user",
         });
 });
+
+app.run(function ($rootScope, $location) {
+    $rootScope.loggedIn = false;
+    // attach to the event that fires before the router changes routes
+    $rootScope.$on("$routeChangeStart", function (event, next) {
+        // check current login status and filter out if navigating to login
+        if (!$rootScope.loggedIn && next.originalPath !== "/login") {
+            // remember the original url
+            $location.url("/login?back=" + $location.url());
+        }
+    });
+});
+// execute this function when the main module finishes loading

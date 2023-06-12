@@ -10,3 +10,7 @@
 .break-all {
     word-break: break-all;
 }
+
+.hidden{
+    display: none;
+}
