@@ -47,11 +47,13 @@
             rel="stylesheet"
             href="assets/libs/perfect-scrollbar/perfect-scrollbar.css"
         />
+        <link rel="stylesheet" href="assets/css/pages/authentication.css" />
+
     </head>
 
-    <body ng-controller="LoginCtr" >
-        <div ng-view ng-show="showE"></div>
-        <div class="layout-content" id="content" ng-hide="showE">
+    <body>
+        <div ng-show="loggedIn">
+            <div class="layout-content" id="content" >
             <!-- [ Preloader ] Start -->
             <div class="page-loader">
                 <div class="bg-primary"></div>
@@ -80,7 +82,11 @@
             </div>
 
             <!-- [ Layout wrapper ] end -->
+        </div></div>
+        <div ng-hide="loggedIn">
+            <ng-view></ng-view>
         </div>
+
         <!-- Core scripts -->
         <script src="assets/js/pace.js"></script>
         <script src="assets/js/jquery-3.3.1.min.js"></script>

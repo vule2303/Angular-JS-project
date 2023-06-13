@@ -5,7 +5,7 @@ app.controller(
         $scope.showE = true;
         //===============================LOGIN==================================
         $scope.Login = function () {
-            $scope.showE = false;
+            
 
             var data = $.param({
                 username: $scope.username,
@@ -23,18 +23,20 @@ app.controller(
             $http.post(url, data, config).then(function success(res) {
                 if (res.data.success) {
                     $rootScope.loggedIn = true;
+                    $scope.showE = true;
                     var back = $location.search().back || "";
                     $location.url(back !== "/login" ? back : "");
                     $window.location.url = "/index.html";
                 } else {
                     alert("The username or password incorrect");
                     $rootScope.loggedIn = false;
+                    $scope.showE = false;
                 }
             });
         };
 
         $scope.logout = function () {
-            $scope.showE = true;
+            $scope.showE = false;
             // Clear the user's login status
             $rootScope.loggedIn = false;
             // Perform any necessary cleanup or additional logic
