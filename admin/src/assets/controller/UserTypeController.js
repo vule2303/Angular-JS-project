@@ -56,6 +56,8 @@ app.controller("UserTypeCtr", function ($scope, $http) {
     //===============================UPDATE==================================
     $scope.showButton = true;
     $scope.Edit = function (type) {
+        type.startdate = new Date(type.startdate);
+        type.enddate = new Date(type.enddate);
         console.log(type);
         $scope.dl_edit = type;
         $scope.showButton = false;
@@ -64,12 +66,23 @@ app.controller("UserTypeCtr", function ($scope, $http) {
         $scope.showButton = true;
     };
     $scope.Update = function (type) {
+        var start = new Date(type.startdate);
+        var dayt = start.getDate();
+        var montht = start.getMonth() + 1;
+        var yeart = start.getFullYear();
+
+        var end = new Date(type.enddate);
+        var daye = end.getDate();
+        var monthe = end.getMonth() + 1;
+        var yearte = end.getFullYear();
+        var StartDate = dayt + "-" + montht + "-" + yeart;
+        var EndDate = daye + "-" + monthe + "-" + yearte;
         var data = $.param({
             id: type.id,
-            type_account: type.idType,
-            price: type.idUser,
-            device: type.startdate,
-            quality: type.enddate,
+            idType: type.idType,
+            idUser: type.idUser,
+            StartDate: StartDate,
+            EndDate: EndDate,
         });
         console.log(data);
         var url =
