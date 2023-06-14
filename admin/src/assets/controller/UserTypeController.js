@@ -11,10 +11,10 @@ app.controller("UserTypeCtr", function ($scope, $http) {
 
     $scope.Create = function () {
         var data = $.param({
-            type_account: $scope.idType,
-            price: $scope.idUser,
-            device: $scope.startdate,
-            quality: $scope.enddate,
+            idType: $scope.idType,
+            idUser: $scope.idUser,
+            startdate: $scope.startdate,
+            enddate: $scope.enddate,
         });
         console.log(data);
         var url =
@@ -66,23 +66,13 @@ app.controller("UserTypeCtr", function ($scope, $http) {
         $scope.showButton = true;
     };
     $scope.Update = function (type) {
-        var start = new Date(type.startdate);
-        var dayt = start.getDate();
-        var montht = start.getMonth() + 1;
-        var yeart = start.getFullYear();
-
-        var end = new Date(type.enddate);
-        var daye = end.getDate();
-        var monthe = end.getMonth() + 1;
-        var yearte = end.getFullYear();
-        var StartDate = dayt + "-" + montht + "-" + yeart;
-        var EndDate = daye + "-" + monthe + "-" + yearte;
+    
         var data = $.param({
             id: type.id,
             idType: type.idType,
             idUser: type.idUser,
-            StartDate: StartDate,
-            EndDate: EndDate,
+            StartDate: type.startdate,
+            EndDate: type.enddate,
         });
         console.log(data);
         var url =

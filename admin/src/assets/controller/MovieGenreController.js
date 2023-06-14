@@ -64,8 +64,8 @@ app.controller("MovieGenreCtr", function ($scope, $http) {
     $scope.Update = function (item) {
         var data = $.param({
             id: item.id,
-            movieid: item.movieid,
-            genreid: item.genreid,
+            movieid: item.movieId,
+            genreid: item.genreId,
         });
         console.log(data);
         var url =

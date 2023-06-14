@@ -2,11 +2,9 @@ app.controller(
     "LoginCtr",
     function ($scope, $http, $window, $rootScope, $location) {
         //$scope.loggedIn = $rootScope.loggedIn;
-        $scope.showE = true;
+
         //===============================LOGIN==================================
         $scope.Login = function () {
-            
-
             var data = $.param({
                 username: $scope.username,
                 password: $scope.password,
@@ -23,14 +21,12 @@ app.controller(
             $http.post(url, data, config).then(function success(res) {
                 if (res.data.success) {
                     $rootScope.loggedIn = true;
-                    $scope.showE = true;
                     var back = $location.search().back || "";
                     $location.url(back !== "/login" ? back : "");
                     $window.location.url = "/index.html";
                 } else {
                     alert("The username or password incorrect");
                     $rootScope.loggedIn = false;
-                    $scope.showE = false;
                 }
             });
         };
