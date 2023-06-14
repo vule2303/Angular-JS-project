@@ -16,8 +16,12 @@ app.config(function ($routeProvider) {
             templateUrl: "/views/about.html",
             controller: "",
         })
-        .when("/category", {
+        .when("/genre", {
             templateUrl: "/views/catalog.html",
+            controller: "",
+        })
+        .when("/plan", {
+            templateUrl: "/views/pricing.html",
             controller: "",
         })
         .when("/movies", {
