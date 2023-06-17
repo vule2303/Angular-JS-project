@@ -1,4 +1,4 @@
-<div class="sign section--bg" data-bg="/img/section/section.jpg">
+<div class="sign section--bg" data-bg="/img/section/section.jpg" ng-controller="SignupCtr">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -14,6 +14,7 @@
                                 type="text"
                                 class="sign__input"
                                 placeholder="Name"
+                                ng-model="username"
                             />
                         </div>
 
@@ -22,6 +23,7 @@
                                 type="text"
                                 class="sign__input"
                                 placeholder="Email"
+                                ng-model="email"
                             />
                         </div>
 
@@ -30,6 +32,23 @@
                                 type="password"
                                 class="sign__input"
                                 placeholder="Password"
+                                ng-model="password"
+                            />
+                        </div>
+                        <div class="sign__group">
+                            <input
+                                type="number"
+                                class="sign__input"
+                                placeholder="Phone"
+                                ng-model="phone"
+                            />
+                        </div>
+                        <div class="sign__group">
+                            <input
+                                type="date"
+                                class="sign__input"
+                                placeholder="Birth Day"
+                                ng-model="birthday"
                             />
                         </div>
 
@@ -46,9 +65,7 @@
                             >
                         </div>
 
-                        <button class="sign__btn" type="button">
-                            Sign up
-                        </button>
+                        <button class="sign__btn" type="button" ng-click="SignUp()">Sign up</button>
 
                         <span class="sign__text"
                             >Already have an account?
@@ -62,4 +79,3 @@
     </div>
 </div>
 <script src="js/main.js"></script>
-
