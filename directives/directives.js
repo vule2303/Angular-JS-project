@@ -11,3 +11,11 @@ app.directive("footerCostume", function () {
         templateUrl: "/components/index/footer.html",
     };
 });
+
+app.directive("listMovie", function () {
+    return {
+        restrict: "E",
+        templateUrl: "/components/main/nav_movies.html",
+        controller: "HomeCtrl"
+    };
+});
