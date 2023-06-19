@@ -17,6 +17,7 @@ app.controller(
             };
             $http.post(url, data, config).then(function success(res) {
                 if (res.data.success) {
+                    $rootScope.Info = res.data.info;
                     $rootScope.loggedIn = true;
                     var back = $location.search().back || "";
                     $location.url(back !== "/signin" ? back : "");
