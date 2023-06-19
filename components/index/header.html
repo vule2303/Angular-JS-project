@@ -37,9 +37,12 @@
                             <i class="icon ion-ios-search"></i>
                         </button>
 
-                        <a href="#!signin" class="header__sign-in">
+                        <a href="#!signin" class="header__sign-in" ng-hide="loggedIn">
                             <i class="icon ion-ios-log-in"></i>
-                            <span>sign in</span>
+                            <span>Sign In</span>
+                        </a>
+                        <a href="#!profile" ng-show="loggedIn">
+                           <img src="/img/home/profile.png" alt="" style=" width: 30px; height: 30px;  margin-left: 30px;">
                         </a>
                     </div>
                     <!-- end header auth -->

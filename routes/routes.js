@@ -36,6 +36,9 @@ app.config(function ($routeProvider) {
         .when("/signup", {
             templateUrl: "/views/signup.html",
         })
+        .when("/profile", {
+            templateUrl: "/views/profile.html",
+        })
         .otherwise({
             redirectTo: "/home",
         });
