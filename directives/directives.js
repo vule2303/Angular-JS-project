@@ -2,7 +2,6 @@ app.directive("headerCostume", function () {
     return {
         restrict: "E",
         templateUrl: "/components/index/header.html",
-        
     };
 });
 app.directive("footerCostume", function () {
@@ -16,9 +15,10 @@ app.directive("listMovie", function () {
     return {
         restrict: "E",
         templateUrl: "/components/main/nav_movies.html",
-        controller: "HomeCtrl"
+        controller: "HomeCtrl",
     };
 });
+
 app.directive("owlCarouselItem", function () {
     return {
         restrict: "A",
@@ -92,5 +92,14 @@ app.directive("owlCarouselItem", function () {
                 }
             });
         },
+    };
+});
+
+// ==========================GENRE MOVIE=====================================
+app.directive("genreDisplay", function () {
+    return {
+        restrict: "E",
+        templateUrl: "/components/catalog/ListGenre.html",
+        controller: "GenreCtrl",
     };
 });
