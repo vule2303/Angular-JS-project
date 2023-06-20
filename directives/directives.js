@@ -103,3 +103,10 @@ app.directive("genreDisplay", function () {
         controller: "GenreCtrl",
     };
 });
+app.directive("catalogList", function () {
+    return {
+        restrict: "E",
+        templateUrl: "/components/catalog/ListMovie.html",
+        controller: "GenreCtrl",
+    };
+});

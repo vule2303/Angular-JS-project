@@ -3823,7 +3823,12 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   
   /* Other styles*/
  
-
+  .card__category.effect a:nth-child(-n+2) {
+    display: inline-block;
+  }
+  .card__category.effect {
+    overflow: hidden;
+  }
  
   
 /* Other styles*/
