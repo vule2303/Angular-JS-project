@@ -1,10 +1,20 @@
-<span class="filter__item-label">Genre:</span>
+<div class="filter__content">
+    <div class="filter__items">
+        <!-- filter item -->
+        <span class="filter__item-label">Genre:</span>
 
-<div class="select">
-    <select>
-        <option selected>All</option>
-        <option ng-repeat="item in GetAllGenre">{{item.name}}</option>
-    </select>
+        <div class="select">
+            <select ng-model="selectedValue">
+                <option ng-repeat="item in GetAllGenre">{{item.name}}</option>
+            </select>
+        </div>
+        <!-- end filter item -->
+    </div>
+
+    <!-- filter btn -->
+    <button class="filter__btn" type="button" ng-click="getSelectedValue()">
+        apply filter
+    </button>
+    <!-- end filter btn -->
 </div>
-
 <script src="../js/main.js"></script>

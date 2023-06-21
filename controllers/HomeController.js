@@ -24,5 +24,6 @@ app.controller("HomeCtrl", function ($scope, $http) {
         $scope.ListMovie = res.data;
     });
 
+
     ///////////////////
 });

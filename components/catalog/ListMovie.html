@@ -4,6 +4,7 @@
         <div class="row">
             <!-- card -->
             <div
+                ng-hide="changeData"
                 class="col-6 col-sm-4 col-lg-3 col-xl-2"
                 ng-repeat="item in AllMovie"
             >
@@ -20,7 +21,33 @@
                     <div class="card__content">
                         <h3 class="card__title">
                             <a href="#">{{item.title}}</a>
-                        </h3>                    
+                        </h3>
+                        <span class="card__rate"
+                            ><i class="icon ion-ios-star"></i
+                            >{{item.vote_average}}</span
+                        >
+                    </div>
+                </div>
+            </div>
+            <div
+                ng-show="changeData"
+                class="col-6 col-sm-4 col-lg-3 col-xl-2"
+                ng-repeat="item in TypeOfMovie"
+            >
+                <div class="card">
+                    <div class="card__cover">
+                        <img
+                            src="https://image.tmdb.org/t/p/w220_and_h330_face/{{item.poster_path}}"
+                            alt=""
+                        />
+                        <a href="#" class="card__play">
+                            <i class="icon ion-ios-play"></i>
+                        </a>
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">
+                            <a href="#">{{item.title}}</a>
+                        </h3>
                         <span class="card__rate"
                             ><i class="icon ion-ios-star"></i
                             >{{item.vote_average}}</span
