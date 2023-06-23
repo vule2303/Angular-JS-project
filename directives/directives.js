@@ -1,20 +1,20 @@
 app.directive("headerCostume", function () {
     return {
         restrict: "E",
-        templateUrl: "/components/index/header.html",
+        templateUrl: "./components/index/header.html",
     };
 });
 app.directive("footerCostume", function () {
     return {
         restrict: "E",
-        templateUrl: "/components/index/footer.html",
+        templateUrl: "./components/index/footer.html",
     };
 });
 
 app.directive("listMovie", function () {
     return {
         restrict: "E",
-        templateUrl: "/components/main/nav_movies.html",
+        templateUrl: "./components/main/nav_movies.html",
         controller: "HomeCtrl",
     };
 });
@@ -99,14 +99,14 @@ app.directive("owlCarouselItem", function () {
 app.directive("genreDisplay", function () {
     return {
         restrict: "E",
-        templateUrl: "/components/catalog/ListGenre.html",
+        templateUrl: "./components/catalog/ListGenre.html",
         controller: "GenreCtrl",
     };
 });
 app.directive("catalogList", function () {
     return {
         restrict: "E",
-        templateUrl: "/components/catalog/ListMovie.html",
+        templateUrl: "./components/catalog/ListMovie.html",
         controller: "GenreCtrl",
     };
 });
