@@ -5,39 +5,39 @@ app.config(function ($routeProvider) {
 
     $routeProvider
         .when("/home", {
-            templateUrl: "/views/main.html",
+            templateUrl: "./views/main.html",
         })
         .when("/series", {
-            templateUrl: "/views/signup.html",
+            templateUrl: "./views/signup.html",
             controller: "",
         })
         .when("/about", {
-            templateUrl: "/views/about.html",
+            templateUrl: "./views/about.html",
             controller: "",
         })
         .when("/genre", {
-            templateUrl: "/views/catalog.html",
+            templateUrl: "./views/catalog.html",
             controller: "",
         })
         .when("/plan", {
-            templateUrl: "/views/pricing.html",
+            templateUrl: "./views/pricing.html",
             controller: "",
         })
         .when("/movies", {
-            templateUrl: "/views/movies.html",
+            templateUrl: "./views/movies.html",
             controller: "",
         })
         .when("/series-movies", {
-            templateUrl: "/views/series-movies.html",
+            templateUrl: "./views/series-movies.html",
         })
         .when("/signin", {
-            templateUrl: "/views/signin.html",
+            templateUrl: "./views/signin.html",
         })
         .when("/signup", {
-            templateUrl: "/views/signup.html",
+            templateUrl: "./views/signup.html",
         })
         .when("/profile", {
-            templateUrl: "/views/profile.html",
+            templateUrl: "./views/profile.html",
         })
         .otherwise({
             redirectTo: "/home",
